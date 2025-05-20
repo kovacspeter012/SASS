@@ -1,10 +1,17 @@
+$blue: #4362ec;
+$orange: #ffa31a;
+$background-blue: #99a6e2;
+
 body{
     margin: 0;
     padding: 0;
+    background-color: $background-blue;
 }
 
 nav {
-    background-color: #4362ec;
+    background-color: $blue;
+    font-size: 30px;
+    margin: 0;
     ul {
       margin: 0;
       padding: 0;
@@ -18,7 +25,65 @@ nav {
       display: block;
       padding: 6px 12px;
       text-decoration: none;
-      color: #ffa31a;
+      color: orange;
+      font-weight: bold;  
+      &:hover{
+        color: white;
+      }
+    }
+  }
+
+@mixin row{
+  display: flex;
+  padding: 10px;
+  .col-l{
+    width: 60%;
+  }
+  .col-r{
+    width: 40%;
+  }
+}
+
+.card{
+  border: 1px solid $orange;
+}
+
+.container{
+    margin: auto;
+    width: 60%;
+    background: linear-gradient(0deg, rgba(255, 255, 255, .8), rgba(255, 255, 255, .8));
+    .title{
+      margin: 0;
+      text-align: center;
+      padding: 10px;
+    }
+    .row{
+      @include row;
+    }
+}
+
+footer{
+  margin: auto;
+  width: 60%;
+  color: $orange;
+  background-color: $blue;
+  font-size: large;
+  .row{
+    @include row;
+    h3{
+      margin: 5px;
+      text-align: center;
+    }
+    h4{
+      margin: 0;
+    }
+    .form-input{
+      margin: 0;
 
     }
   }
+  .copyright{
+    text-align: center;
+    margin: 0;
+  }
+}
