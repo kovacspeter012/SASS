@@ -6,7 +6,11 @@ body{
     margin: 0;
     padding: 0;
     background-color: $background-blue;
-}
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    p{
+      text-align: justify;
+    }
+  }
 
 nav {
     background-color: $blue;
@@ -46,11 +50,47 @@ nav {
 
 .card{
   border: 1px solid $orange;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.card-to-middle{
+  display: block !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+.card-pic{
+  @extend .card;
+  width: 29%;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 5px !important;
+  border: 0;
+  img{
+    width: 90%;
+    margin: auto;
+    display: block;
+    margin-bottom: 3px;
+  }
+  p{
+    text-align: center;
+    margin: 0;
+    font-size: small;
+  }
+}
+
+.float-left{
+  float: left;
+}
+.float-right{
+  float: right;
 }
 
 .container{
     margin: auto;
     width: 60%;
+    padding: 15px;
     background: linear-gradient(0deg, rgba(255, 255, 255, .8), rgba(255, 255, 255, .8));
     .title{
       margin: 0;
@@ -67,23 +107,50 @@ footer{
   width: 60%;
   color: $orange;
   background-color: $blue;
+  padding-top: 10px;
+  padding-bottom: 10px;
   font-size: large;
-  .row{
-    @include row;
-    h3{
+  h3{
       margin: 5px;
       text-align: center;
-    }
-    h4{
-      margin: 0;
-    }
-    .form-input{
-      margin: 0;
-
-    }
   }
+  h4{
+      margin: 0;
+  }
+    
   .copyright{
     text-align: center;
     margin: 0;
   }
 }
+
+form{
+  width: 100%;
+  .form-input{
+    margin: 0;
+    margin-bottom: 5px;
+    .input-title{
+      font-weight: bold;
+    }
+    .l{
+      width: 35%;
+      text-align: center;
+    }
+    .r{
+      width: 40%;
+      
+    }
+  }
+  .submit-button{
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 30px;
+    width: 90px;
+    background-color: $orange;
+    border: 0px;
+    border-radius: 5px;
+  }
+}
+
